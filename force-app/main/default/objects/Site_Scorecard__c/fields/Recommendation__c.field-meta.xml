@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recommendation__c</fullName>
+    <label>Recommendation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Strongly Recommended</fullName>
+                <default>false</default>
+                <label>Strongly Recommended</label>
+            </value>
+            <value>
+                <fullName>Recommended</fullName>
+                <default>false</default>
+                <label>Recommended</label>
+            </value>
+            <value>
+                <fullName>Needs Further Analysis</fullName>
+                <default>false</default>
+                <label>Needs Further Analysis</label>
+            </value>
+            <value>
+                <fullName>Not Recommended</fullName>
+                <default>false</default>
+                <label>Not Recommended</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

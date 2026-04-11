@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Site_Category__c</fullName>
+    <label>Site Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High Street</fullName>
+                <default>false</default>
+                <label>High Street</label>
+            </value>
+            <value>
+                <fullName>Mall</fullName>
+                <default>false</default>
+                <label>Mall</label>
+            </value>
+            <value>
+                <fullName>Residential Hub</fullName>
+                <default>false</default>
+                <label>Residential Hub</label>
+            </value>
+            <value>
+                <fullName>Transit Corridor</fullName>
+                <default>false</default>
+                <label>Transit Corridor</label>
+            </value>
+            <value>
+                <fullName>Commercial District</fullName>
+                <default>false</default>
+                <label>Commercial District</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,117 @@
+<template>
+    <lightning-card title="Store Expansion Strategy Dashboard" icon-name="standard:location">
+        
+        <!-- Summary Cards -->
+        <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+            <div class="slds-col slds-size_1-of-4 slds-p-around_x-small">
+                <div class="summary-card blue-card">
+                    <div class="card-value">{totalSites}</div>
+                    <div class="card-label">Total Sites</div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-p-around_x-small">
+                <div class="summary-card green-card">
+                    <div class="card-value">{blindSpotCount}</div>
+                    <div class="card-label">Blind Spots</div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-p-around_x-small">
+                <div class="summary-card orange-card">
+                    <div class="card-value">{avgDemandScore}</div>
+                    <div class="card-label">Avg Demand Score</div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-p-around_x-small">
+                <div class="summary-card purple-card">
+                    <div class="card-value">{avgPayback}</div>
+                    <div class="card-label">Avg Payback (Yrs)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="slds-grid slds-wrap slds-gutters slds-p-horizontal_medium slds-p-bottom_small">
+            <div class="slds-col slds-size_1-of-4 slds-p-around_x-small">
+                <lightning-combobox label="City" value={selectedCity} options={cityOptions} onchange={handleCityChange} placeholder="All Cities"></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-p-around_x-small">
+                <lightning-combobox label="Competition Level" value={selectedCompetition} options={competitionOptions} onchange={handleCompetitionChange} placeholder="All Levels"></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-p-around_x-small">
+                <lightning-combobox label="Site Category" value={selectedCategory} options={categoryOptions} onchange={handleCategoryChange} placeholder="All Categories"></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-p-around_x-small">
+                <lightning-combobox label="View" value={selectedView} options={viewOptions} onchange={handleViewChange}></lightning-combobox>
+            </div>
+        </div>
+
+        <!-- Chart View -->
+        <template if:true={showChart}>
+            <div class="slds-p-around_medium">
+                <div class="chart-container">
+                    <h2 class="slds-text-heading_small slds-p-bottom_small">Demand Score vs Competition — Bubble Size = Monthly Revenue</h2>
+                    <div class="chart-wrapper">
+                        <canvas lwc:dom="manual" class="bubble-chart"></canvas>
+                    </div>
+                    <div class="legend-container slds-p-top_small">
+                        <span class="legend-item"><span class="legend-dot green-dot"></span> Low Competition</span>
+                        <span class="legend-item"><span class="legend-dot yellow-dot"></span> Medium Competition</span>
+                        <span class="legend-item"><span class="legend-dot red-dot"></span> High Competition</span>
+                        <span class="legend-item"><span class="legend-dot blind-dot"></span> Blind Spot</span>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Table View -->
+        <template if:true={showTable}>
+            <div class="slds-p-around_medium">
+                <lightning-datatable key-field="id" data={filteredTableData} columns={columns} default-sort-direction="desc" sorted-by="demandScore" sorted-direction="desc" onsort={handleSort} onrowaction={handleRowAction} hide-checkbox-column></lightning-datatable>
+            </div>
+        </template>
+
+        <!-- Detail Panel -->
+        <template if:true={showDetail}>
+            <div class="slds-p-around_medium">
+                <lightning-card title={selectedSite.Name}>
+                    <div class="slds-grid slds-wrap slds-p-around_medium">
+                        <div class="slds-col slds-size_1-of-2">
+                            <div class="detail-section">
+                                <h3 class="slds-text-heading_small">Location</h3>
+                                <p><strong>Micro Market:</strong> {selectedSite.Micro_Market__c}</p>
+                                <p><strong>Address:</strong> {selectedSite.Address__c}</p>
+                                <p><strong>PIN Code:</strong> {selectedSite.PIN_Code__c}</p>
+                                <p><strong>Category:</strong> {selectedSite.Site_Category__c}</p>
+                                <p><strong>Status:</strong> {selectedSite.Site_Status__c}</p>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <div class="detail-section">
+                                <h3 class="slds-text-heading_small">Scores & Financials</h3>
+                                <p><strong>Demand Score:</strong> {selectedSite.Demand_Score__c}/100</p>
+                                <p><strong>Competition:</strong> {selectedSite.Competition_Level__c}</p>
+                                <p><strong>Competitors:</strong> {selectedSite.Competitor_Count__c}</p>
+                                <p><strong>Monthly Revenue:</strong> ₹{selectedSiteRevenue}</p>
+                                <p><strong>Setup Cost:</strong> ₹{selectedSiteSetupCost}</p>
+                                <p><strong>Payback:</strong> {selectedSite.Payback_Period_Years__c} years</p>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-p-top_small">
+                            <template if:true={selectedSiteIsBlindSpot}>
+                                <div class="blind-spot-badge">BLIND SPOT OPPORTUNITY</div>
+                            </template>
+                            <div class="detail-section">
+                                <h3 class="slds-text-heading_small">Agent Recommendation</h3>
+                                <p>{selectedSite.Agent_Recommendation__c}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div slot="actions">
+                        <lightning-button label="Back to List" onclick={handleBackToList} variant="neutral"></lightning-button>
+                    </div>
+                </lightning-card>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ROI_Percentage__c</fullName>
+    <formula>IF(Estimated_Setup_Cost__c &gt; 0, ((Estimated_Monthly_Revenue__c * 12) - Estimated_Setup_Cost__c) / Estimated_Setup_Cost__c * 100, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ROI %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

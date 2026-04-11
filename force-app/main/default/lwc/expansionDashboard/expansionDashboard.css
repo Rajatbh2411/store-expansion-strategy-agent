@@ -1,0 +1,83 @@
+.summary-card {
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.card-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+.blue-card { background: linear-gradient(135deg, #1565C0, #1E88E5); }
+.green-card { background: linear-gradient(135deg, #2E7D32, #43A047); }
+.orange-card { background: linear-gradient(135deg, #E65100, #FB8C00); }
+.purple-card { background: linear-gradient(135deg, #6A1B9A, #AB47BC); }
+
+.chart-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.chart-wrapper {
+    position: relative;
+    height: 450px;
+    width: 100%;
+}
+
+.legend-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #444;
+}
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.green-dot { background: rgba(76, 175, 80, 0.8); }
+.yellow-dot { background: rgba(255, 193, 7, 0.8); }
+.red-dot { background: rgba(244, 67, 54, 0.8); }
+.blind-dot { background: rgba(33, 150, 243, 0.8); border: 2px solid #1565C0; }
+
+.detail-section {
+    padding: 8px 0;
+}
+.detail-section h3 {
+    color: #1565C0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 4px;
+}
+.detail-section p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+
+.blind-spot-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #1565C0, #42A5F5);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}

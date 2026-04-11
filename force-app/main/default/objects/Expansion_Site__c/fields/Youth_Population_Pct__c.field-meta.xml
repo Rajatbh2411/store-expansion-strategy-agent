@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Youth_Population_Pct__c</fullName>
+    <description>Percentage of population aged 18-35 in the PIN code area.</description>
+    <label>Youth Population %</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>
