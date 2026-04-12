@@ -96,9 +96,9 @@ I'm at coordinates 19.0860, 72.9080 — score this location
 - Automated workflow triggers on "Strongly Recommended" scorecards
 
 ## Team
-Rajat Bhardwaj
-Stuti Mishra
-Varun Tyagi
+Rajat Bhardwaj,
+Stuti Mishra,
+Varun Tyagi,
 Himanshi Kaushik
 
 ## License
