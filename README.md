@@ -96,7 +96,10 @@ I'm at coordinates 19.0860, 72.9080 — score this location
 - Automated workflow triggers on "Strongly Recommended" scorecards
 
 ## Team
-[Your team name and members]
+Rajat Bhardwaj
+Stuti Mishra
+Varun Tyagi
+Himanshi Kaushik
 
 ## License
 Built for Agentforce World Tour Mumbai Hackathon 2026. All submissions remain the intellectual property of the developers.
