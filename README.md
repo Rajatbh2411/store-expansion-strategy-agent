@@ -7,7 +7,7 @@ An AI-powered Store Expansion Strategy Agent built on Salesforce Agentforce that
 
 ## Demo
 - **Experience Cloud Portal:** "orgfarm-a5cd43f7cf.my.site.com/expansionportal"
-- **Demo Video:** [Link to video]
+- **Demo Video:** https://drive.google.com/file/d/1-Ja0TVWHvUqomh8Cssgipy8h_qEVG5v5/view?usp=drive_link
 
 ## Features
 - **Location Recommendation** — Top expansion sites ranked by Demand Score with filtering by city, competition, and category
