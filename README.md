@@ -6,7 +6,7 @@
 An AI-powered Store Expansion Strategy Agent built on Salesforce Agentforce that helps the Central Planning Team identify optimal locations for new retail store openings across Mumbai metropolitan region. The agent analyzes footfall data, demographic profiles, competitor proximity, and financial metrics to recommend high-potential locations with projected success metrics.
 
 ## Demo
-- **Experience Cloud Portal:** "orgfarm-a5cd43f7cf.my.site.com/expansionportal"
+- **Experience Cloud Portal:** orgfarm-a5cd43f7cf.my.site.com/expansionportal
 - **Demo Video:** https://drive.google.com/file/d/1Fr3VlXy1VYftb-eKMgmLs9Pw_Nri13uT/view?usp=sharing
 
 ## Features
